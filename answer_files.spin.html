@@ -133,9 +133,11 @@ knitr::kable(performance)</code></pre>
 ## |Random Forest |0.99464914906032  |
 ## |SVM (radial)  |0.933493692254751 |
 ## |LogitBoost    |0.898145222035049 |</code></pre>
-<p>From the above, it looks like Random forest and SVM(radial) provide the best results with Random Forest giving an out-of-sample error of 0.005 (which is 1 minus 0.995) 
+<p>From the above, it looks like Random forest and SVM(radial) provide the best results
+with Random Forest giving an error of 0.005 (which is 1 minus 0.995) or 1 out of 200.
 <h3>Prediction</h3>
-<p>Let’s predict with the best models noted earlier, Random Forest</p>
+<p>Let's predict with the best models noted earlier, Random Forest. Given that the cross-validation error of this model was 1/200, the chance of getting an out-of-sample error in a testing set of 20 is pretty small.
+</p>
 <pre class="r"><code>rfPred &lt;- predict(rf, testingset)
 
 pml_write_files = function(x){

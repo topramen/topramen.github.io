@@ -91,10 +91,10 @@ knitr::kable(performance)
 ```
 
 From the above, it looks like Random forest and SVM(radial) provide the best results
-with Random Forest giving an out-of-sample error of 0.005 (which is 1 minus 0.995) 
+with Random Forest giving an error of 0.005 (which is 1 minus 0.995) or 1 out of 200.
 
 ### Prediction
-Let's predict with the best models noted earlier, Random Forest 
+Let's predict with the best models noted earlier, Random Forest. Given that the cross-validation error of this model was 1/200, the chance of getting an out-of-sample error in a testing set of 20 is pretty small.
 
 ```{r }
 rfPred <- predict(rf, testingset)
